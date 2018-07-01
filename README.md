@@ -36,7 +36,6 @@ Using Python virtual environment will be advisable.
 
 ##
 #### Copyright & License
-Halite Bot Competition Source Code
 
 Copyright (C) 2018  Mayur Madnani
 
