@@ -1,5 +1,4 @@
-# FER
-Facial Expression Recognition
+# FER - Facial Expression Recognition
 
 This work is to demonstrate the below problem: 
 https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge
