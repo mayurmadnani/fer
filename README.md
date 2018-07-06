@@ -9,8 +9,11 @@ The CNN model is tuned for fine performance even on a low end device.
 ## Instructions
 Follow the [guided tutorial](FER_CNN.ipynb) for neural network training.
 
-To run the model, `python FER.py`. Face detection and emotion recognition should start on webcam video stream.
-
+Files Structure:
+- FER_CNN.ipynb - Tutorial to train the CNN
+- FER.py - Uses the pre-trained model to give inferences
+- model.json - Neural network architecture
+- weights.h5 - Trained model weights
 ## Installation
 Using Python virtual environment will be advisable.
 * For model prediction
