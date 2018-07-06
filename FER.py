@@ -1,7 +1,8 @@
 from keras.models import model_from_json
 import numpy as np
 import cv2
-
+import argparse
+import os
 
 class FacialExpressionModel(object):
     EMOTIONS_LIST = ["Angry", "Disgust", "Fear", "Happy", "Sad", "Surprise", "Neutral"]
@@ -20,10 +21,14 @@ class FacialExpressionModel(object):
         return FacialExpressionModel.EMOTIONS_LIST[np.argmax(self.preds)]
 
 
-cap = cv2.VideoCapture(0)
+parser = argparse.ArgumentParser()
+parser.add_argument("source")
+parser.add_argument("fps")
+args = parser.parse_args()
+cap = cv2.VideoCapture(os.path.abspath(args.source) if not args.source == 'webcam' else 0)
 faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 font = cv2.FONT_HERSHEY_SIMPLEX
-cap.set(cv2.CAP_PROP_FPS, 60)
+cap.set(cv2.CAP_PROP_FPS, int(args.fps))
 
 
 def getdata():
@@ -41,8 +46,8 @@ def start_app(cnn):
             roi = cv2.resize(fc, (48, 48))
             pred = cnn.predict_emotion(roi[np.newaxis, :, :, np.newaxis])
 
-            cv2.putText(fr, pred, (x, y), font, 1, (255, 255, 0), 2)
-            cv2.rectangle(fr, (x, y), (x + w, y + h), (255, 0, 0), 2)
+            cv2.putText(fr, pred, (x, y), font, 1, (255, 255, 0), 1)
+            cv2.rectangle(fr, (x, y), (x + w, y + h), (255, 0, 0), 1)
 
         if cv2.waitKey(1) == 27:
             break

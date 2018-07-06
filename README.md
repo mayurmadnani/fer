@@ -27,6 +27,16 @@ Using Python virtual environment will be advisable.
     
 * For model training,
     `pandas` `numpy` `tensorflow` `keras` `matplotlib` `scikit-learn` `seaborn`
+    
+* Running the inference engine
+
+Use the webcam
+
+`python FER.py webcam <fps>`
+
+Use a video file
+
+`python FER.py <video_file_name> <fps>`
 
 ## Contributing
 * Report issues on issue tracker
