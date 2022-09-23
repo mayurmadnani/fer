@@ -11,7 +11,7 @@ Keras-Preprocessing==1.0.5
 Markdown==2.6.11
 numpy==1.14.5
 opencv-python==3.4.2.17
-protobuf==3.6.1
+protobuf==3.18.3
 PyYAML==4.2b1
 scipy==1.1.0
 six==1.11.0
